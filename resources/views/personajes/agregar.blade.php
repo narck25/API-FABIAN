@@ -1,55 +1,57 @@
 @extends('layouts.index')
 
 @section('content')
-<div class="container mx-auto p-8">
-    <h1 class="text-3xl font-bold mb-6">Agregar Personaje</h1>
+<div class="min-h-screen flex items-center justify-center bg-sky-950">
+    <div class="container mx-auto p-8 max-w-2xl">
+        <h1 class="text-4xl font-bold mb-8 text-center text-white">Agregar Personaje</h1>
 
-    @if(session('success'))
-        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-            {{ session('success') }}
-        </div>
-    @endif
+        @if(session('success'))
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6 text-center">
+                {{ session('success') }}
+            </div>
+        @endif
 
-    <form action="{{ route('personajes.store') }}" method="POST" class="max-w-lg bg-white p-6 rounded shadow">
-        @csrf
+        <form action="{{ route('personajes.store') }}" method="POST" class="bg-white p-8 rounded-lg shadow-xl">
+            @csrf
 
-        <div class="mb-3">
-            <label class="font-semibold">Nombre:</label>
-            <input type="text" name="name" value="{{ old('name') }}" class="w-full border p-2 rounded" required>
-            @error('name') <span class="text-red-500">{{ $message }}</span> @enderror
-        </div>
+            <div class="mb-4">
+                <label class="block font-semibold text-gray-700 mb-2">Nombre:</label>
+                <input type="text" name="name" value="{{ old('name') }}" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                @error('name') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="mb-3">
-            <label class="font-semibold">Rol:</label>
-            <input type="text" name="role" value="{{ old('role') }}" class="w-full border p-2 rounded" required>
-            @error('role') <span class="text-red-500">{{ $message }}</span> @enderror
-        </div>
+            <div class="mb-4">
+                <label class="block font-semibold text-gray-700 mb-2">Rol:</label>
+                <input type="text" name="role" value="{{ old('role') }}" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                @error('role') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="mb-3">
-            <label class="font-semibold">Fruta:</label>
-            <input type="text" name="fruit" value="{{ old('fruit') }}" class="w-full border p-2 rounded" required>
-            @error('fruit') <span class="text-red-500">{{ $message }}</span> @enderror
-        </div>
+            <div class="mb-4">
+                <label class="block font-semibold text-gray-700 mb-2">Fruta:</label>
+                <input type="text" name="fruit" value="{{ old('fruit') }}" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                @error('fruit') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="mb-3">
-            <label class="font-semibold">Haki:</label>
-            <input type="text" name="haki" value="{{ old('haki') }}" class="w-full border p-2 rounded" required>
-            @error('haki') <span class="text-red-500">{{ $message }}</span> @enderror
-        </div>
+            <div class="mb-4">
+                <label class="block font-semibold text-gray-700 mb-2">Haki:</label>
+                <input type="text" name="haki" value="{{ old('haki') }}" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                @error('haki') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="mb-3">
-            <label class="font-semibold">Edad:</label>
-            <input type="number" name="age" value="{{ old('age') }}" class="w-full border p-2 rounded" required>
-            @error('age') <span class="text-red-500">{{ $message }}</span> @enderror
-        </div>
+            <div class="mb-4">
+                <label class="block font-semibold text-gray-700 mb-2">Edad:</label>
+                <input type="number" name="age" value="{{ old('age') }}" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                @error('age') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            </div>
 
-        <div class="mb-3">
-            <label class="font-semibold">Recompensa (millones):</label>
-            <input type="number" name="bounty" value="{{ old('bounty') }}" class="w-full border p-2 rounded" required>
-            @error('bounty') <span class="text-red-500">{{ $message }}</span> @enderror
-        </div>
+            <div class="mb-6">
+                <label class="block font-semibold text-gray-700 mb-2">Recompensa (millones):</label>
+                <input type="number" name="bounty" value="{{ old('bounty') }}" class="w-full border border-gray-300 p-3 rounded focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                @error('bounty') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
+            </div>
 
-        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Guardar</button>
-    </form>
+            <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded transition duration-300">Guardar Personaje</button>
+        </form>
+    </div>
 </div>
 @endsection
