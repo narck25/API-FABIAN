@@ -17,19 +17,6 @@ Un sistema de gestión de personajes de One Piece desarrollado con Laravel 12. E
 - Composer
 - MySQL
 
-## 📖 Uso
-
-### Interfaz Web
-
-- **Lista de personajes**: `http://127.0.0.1:8000/personajes`
-- **Agregar personaje**: `http://127.0.0.1:8000/personajes/agregar`
-- **Editar personaje**: `http://127.0.0.1:8000/personajes/modificar/{id}`
-- **Eliminar personaje**: `http://127.0.0.1:8000/personajes/eliminar`
-
-### API REST
-
-Base URL: `http://127.0.0.1:8000/api/onepiece`
-
 ## 🏗️ Arquitectura
 
 ### Estructura del Proyecto
