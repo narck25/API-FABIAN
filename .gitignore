@@ -144,3 +144,6 @@ Thumbs.db
 /.phpunit.cache
 /.vscode/settings.json
 /.zed
+
+# Documentation
+README.md
